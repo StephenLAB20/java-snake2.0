@@ -27,12 +27,12 @@ public class GamePanel extends JPanel implements ActionListener {
 	private int foodY;
 	private boolean isUnique;
 	private boolean isEaten;
-	private int randCount = 0; // to delete
+	private int randCount = 0; // How much random position is unique.
 	private String foodType;
 	private char direction;
 	private boolean inGame;
 	private boolean isPause;
-	private boolean isAction; // The snake auto starts with it. Remove it everywhere if it's no needed.
+	private boolean isAction; // The snake auto starts if true. By default it false.
 	private Timer timer;
 	private Random random;
 	long startTime;
@@ -240,8 +240,8 @@ public class GamePanel extends JPanel implements ActionListener {
 		DecimalFormat df = new DecimalFormat("00");
 		int time = (int) milsec / 1000;
 		int ss = time % 60;
+		int mm = (time % 3600) / 60;
 		int hh = time / 3600;
-		int mm = hh % 60;
 		String str = df.format(hh) + ":" + df.format(mm) + ":" + df.format(ss);
 		topPanel.setStrTimer(str);
 	}

@@ -6,13 +6,14 @@ import java.awt.FlowLayout;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
 public class GameFrame extends JFrame {
 
 	private Dimension contentSize = new Dimension(GameParams.SCREEN_WIDTH, GameParams.GAME_FIELD_HEIGTH + GameParams.TOP_PANEL_HEIGTH);
-//	ImageIcon logoImg = new ImageIcon(getClass().getResource("/smalllogo.png"));
+	ImageIcon logoImg = new ImageIcon(getClass().getResource("/frameLogo.png"));
 
 	TopPanel top;
 	GamePanel field;
@@ -59,7 +60,7 @@ public class GameFrame extends JFrame {
 		this.add(container);
 		this.setTitle("Snake");
 		this.setDefaultCloseOperation(EXIT_ON_CLOSE);
-//		this.setIconImage(logoImg.getImage());
+		this.setIconImage(logoImg.getImage());
 		this.setVisible(true);
 		this.pack();
 		this.setLocationRelativeTo(null);
